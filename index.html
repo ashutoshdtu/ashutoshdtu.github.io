@@ -183,7 +183,7 @@
 			.section .set h3 {
 				margin: 0;
 			}
-		.section span {
+		.section span.value {
 			display: block;
 		}
 		.section h3 span.l, .section span.r {
@@ -200,6 +200,43 @@
 				display: block;
 				margin: 5px 0 5px 0;
 			}
+		.myButton {
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #44c767), color-stop(1, #5cbf2a));
+			background:-moz-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+			background:-webkit-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+			background:-o-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+			background:-ms-linear-gradient(top, #44c767 5%, #5cbf2a 100%);
+			background:linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#44c767', endColorstr='#5cbf2a',GradientType=0);
+			background-color:#44c767;
+			-moz-border-radius:28px;
+			-webkit-border-radius:28px;
+			border-radius:28px;
+			border:1px solid #18ab29;
+			display:inline-block;
+			cursor:pointer;
+			color:#ffffff;
+			font-family:Arial;
+			font-size:17px;
+			padding:2px 31px;
+			text-decoration:none;
+			text-shadow:0px 1px 0px #2f6627;
+			float: right;
+		}
+		.myButton:hover {
+			background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5cbf2a), color-stop(1, #44c767));
+			background:-moz-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+			background:-webkit-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+			background:-o-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+			background:-ms-linear-gradient(top, #5cbf2a 5%, #44c767 100%);
+			background:linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+			filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5cbf2a', endColorstr='#44c767',GradientType=0);
+			background-color:#5cbf2a;
+		}
+		.myButton:active {
+			position:relative;
+			top:1px;
+		}
 
 		/* ___ photo ___ */
 		#photo {
@@ -254,8 +291,12 @@
 			<img src="resumePic.png" alt="ashutosh mishra" title="Ashutosh Mishra" />
 		</div>
 		<div class="header photo">
-	
-	<h1 id="title">Ashutosh Mishra</h1>
+
+	<h1 id="title">
+		Ashutosh Mishra
+		<a href="Ashutosh_Mishra_Resume.pdf" download="Ashutosh_Mishra_Resume.pdf" class="myButton">Download pdf</a>
+	</h1>
+
 	<div class="basic-info section">
 				<div class="set">
 		
@@ -276,63 +317,63 @@
 			<div class="section section-interests">
 			<h2 class="title">Skills</h2>
 			<div class="set">
-						<div class="item">
-							<span class="info"><strong>LANGUAGES:</strong> <strong>Java, C, C++, Python, </strong>MATLAB<br /><strong>TECHNOLOGIES:</strong> Elasticsearch, <strong>Solr</strong>, Redis, <strong>Play Framework</strong>, <strong>MongoDB</strong>, Lucene, <strong>RabbitMQ</strong>, Cleo, Amazon AWS, Git, prior experience in <strong>OpenCV, </strong>OpenMPI and OpenGL<br /><strong>OPERATING SYSTEMS:</strong> <strong>Linux</strong> (or any POSIX compliant OS), Windows<br /><strong>UNDERGRAD RESEARCH:</strong> Image Processing, Machine Vision, Stereo Vision, Machine Learning, Cortical Algorithms, Hierarchical Temporal Memory, Deep Learning</span>
+							<div class="item">
+								<span class="info"><div><span><b>LANGUAGES:</b> </span><b><span>Java,</span>C, C++, Python, </b>MATLAB</div><div><div><span><b>TECHNOLOGIES:</b> Elasticsearch, </span><b>Solr</b><span>, </span><span>Redis,</span><span><b>Play Framework</b>, <b>MongoDB</b>, Lucene, <b>RabbitMQ</b>, Cleo, Amazon AWS, Git, </span><span>prior experience in </span><b>OpenCV, </b><span>OpenMPI and OpenGL</span></div><div><b>OPERATING SYSTEMS:</b><b>Linux</b><span> (or any POSIX compliant OS), Windows</span></div><div><span><b>UNDERGRAD RESEARCH:</b> Image Processing, Machine Vision, Stereo Vision, Machine Learning, Cortical </span><span>Algorithms, Hierarchical Temporal Memory, Deep Learning</span></div></div></span>
+							</div>
 						</div>
-					</div>
 			<div class="clear"> </div>
 		</div>
 			<div class="section section-work">
 			<h2 class="title">Work experience</h2>
 			<div class="set">
-							<div class="item">
-								<h3><span class="company l">Gwynnie Bee</span>
-						<span class="date r">November 2015 &mdash; Present</span>
-							</h3>
-							<span class="clear"> </span>
-							<span class="job_title">Software Developer</span><span class="clear"> </span>
+								<div class="item">
+									<h3><span class="company l">Gwynnie Bee</span>
+							<span class="date r">November 2015 &mdash; May 2016</span>
+								</h3>
+								<div class="clear"> </div>
+								<span class="job_title">Software Developer</span><div class="clear"> </div>
+								</div>
+							
+								<div class="item">
+									<h3><span class="company l">Thinqur</span>
+							<span class="date r">June 2015 &mdash; September 2015</span>
+								</h3>
+								<div class="clear"> </div>
+								<span class="job_title">Attempt at starting up</span><div class="info"><div>Thinqur is an online portal where people could conduct social polls and vote on questions posted by people in a fun and engaging way. (http://thinqur.com) </div><div>+ Developed entire <b>backend API</b>. </div><div>+ Handled <b>Devops</b>.</div><div>+ Worked on various technologies like <b>MongoDB, Play Framework, RabbitMQ, Redis, Google Analytics, AWS, Codedeploy</b>.</div><div>+ Also worked on UX, UI design, logo design. </div><div>+ Languages used: <b>Java</b> and <b>Python</b></div><div><br /></div><div><br /></div></div><div class="clear"> </div>
+								</div>
+							
+								<div class="item">
+									<h3><span class="company l">Right Relevance Inc.</span>
+							<span class="date r">September 2014 &mdash; July 2015</span>
+								</h3>
+								<div class="clear"> </div>
+								<span class="job_title">SDE</span><div class="info"><div>Worked on various technologies like <b>Solr, Elasticsearch, Redis, MongoDB, Cleo, RabbitMQ</b> and focused mainly on improving the <b>search</b> experience of users and <b>REST APIs</b>. </div><div>Also owned and managed various backend services:</div><div><b>+</b> Owned search <b>APIs</b>.</div><div><b>+</b> Implemented/Owned <b>email digest</b> generation service.</div><div><b>+</b> Owned user's <b>homefeeds</b> generation</div><div><b>+</b> Owned <b>Search recall and relevance</b>.</div><div>+ Owned website <b>traffic analytics</b>. </div><div>+ Speed optimisation of various services like user's <b>homefeeds</b> and email digest generation</div><div><b>+</b> Implemented/Owned online <b>query autocompletion</b> service (using elasticsearch) to guide the user in relevant results space.</div><div>+ Implemented synonym expansion custom plugin for Solr to improve search recall.</div><div>+ Languages used: <b>Java</b> and <b>Python</b></div></div><div class="clear"> </div>
+								</div>
+							
+								<div class="item">
+									<h3><span class="company l">Right Relevance Inc.</span>
+							<span class="date r">June 2014 &mdash; August 2014</span>
+								</h3>
+								<div class="clear"> </div>
+								<span class="job_title">Software Consultant</span><div class="info"><div>Worked on search relevance and recall.</div><div>+ Implemented custom scoring logic over Solr for better ranking. </div><div>+ Worked on query autocomplete service (using LinkedIn's OSS Cleo).</div><div>+ Worked on improving search relevance and recall. </div></div><div class="clear"> </div>
+								</div>
+							
+								<div class="item">
+									<h3><span class="company l">Robotics and Machine Intelligence Lab (DTU)</span>
+							<span class="date r">November 2011 &mdash; May 2014</span>
+								</h3>
+								<div class="clear"> </div>
+								<span class="job_title">Member</span><div class="info"><div>Worked on various projects in Computer Vision and Machine Intelligence:</div><div>+ MAJOR PROJECT 2: Modelling the motions and gestures of a human hand precisely using RGB-D sensor</div><div>+ MAJOR PROJECT: Parsing Natural Scenes using Deep Learning Approach</div><div>+ Interactive 3D display - Converted 2D display to 3D display by tracking head movements. </div><div>+ Kinect based Autonomous Quadcopter</div><div>+ Came 7th (out of over 200 teams nationwide) in Freescale Cup 2012 (IISC Bangalore)</div><div>+ Skin Color Detector  + Face Tracker  + Hand Tracker</div><div>+ Biometric Authentication Using Infrared Imaging of Hand Vein Patterns</div><div>+ Color Based Stereo Correspondence algorithm with Adaptive Local Support</div><div>+ Software to allow users to use hand gestures to perform mouse clicks.</div></div><div class="clear"> </div>
+								</div>
+							
+								<div class="item">
+									<h3><span class="company l">Hitech Robotic Systemz Ltd.</span>
+							<span class="date r">June 2013 &mdash; July 2013</span>
+								</h3>
+								<div class="clear"> </div>
+								<span class="job_title">Internship</span><div class="info"><span>+ Developed protocol for communication between Robots and PC. </span><br /><span>+ Developed GUI to remotely control the robots. </span></div><div class="clear"> </div>
+								</div>
 							</div>
-						
-							<div class="item">
-								<h3><span class="company l">Thinqur</span>
-						<span class="date r">June 2015 &mdash; September 2015</span>
-							</h3>
-							<span class="clear"> </span>
-							<span class="job_title">Attempt at starting up</span><span class="info">Thinqur is an online portal where people could conduct social polls and vote on questions posted by people in a fun and engaging way. (http://thinqur.com) <br />+ Developed entire <strong>backend API</strong>. <br />+ Handled <strong>Devops</strong>.<br />+ Worked on various technologies like <strong>MongoDB, Play Framework, RabbitMQ, Redis, Google Analytics, AWS, Codedeploy</strong>.<br />+ Also worked on UX, UI design, logo design. <br />+ Languages used: <strong>Java</strong> and <strong>Python</strong></span><span class="clear"> </span>
-							</div>
-						
-							<div class="item">
-								<h3><span class="company l">Right Relevance Inc.</span>
-						<span class="date r">September 2014 &mdash; July 2015</span>
-							</h3>
-							<span class="clear"> </span>
-							<span class="job_title">SDE</span><span class="info">Worked on various technologies like <strong>Solr, Elasticsearch, Redis, MongoDB, Cleo, RabbitMQ</strong> and focused mainly on improving the <strong>search</strong> experience of users and <strong>REST APIs</strong>. <br />Also owned and managed various backend services:<br /><strong>+</strong> Owned search <strong>APIs</strong>.<br /><strong>+</strong> Implemented/Owned <strong>email digest</strong> generation service.<br /><strong>+</strong> Owned user's <strong>homefeeds</strong> generation<br /><strong>+</strong> Owned <strong>Search recall and relevance</strong>.<br />+ Owned website <strong>traffic analytics</strong>. <br />+ Speed optimisation of various services like user's <strong>homefeeds</strong> and email digest generation<br /><strong>+</strong> Implemented/Owned online <strong>query autocompletion</strong> service (using elasticsearch) to guide the user in relevant results space.<br />+ Implemented synonym expansion custom plugin for Solr to improve search recall.<br />+ Languages used: <strong>Java</strong> and <strong>Python</strong></span><span class="clear"> </span>
-							</div>
-						
-							<div class="item">
-								<h3><span class="company l">Right Relevance Inc.</span>
-						<span class="date r">June 2014 &mdash; August 2014</span>
-							</h3>
-							<span class="clear"> </span>
-							<span class="job_title">Software Consultant</span><span class="info">Worked on search relevance and recall.<br />+ Implemented custom scoring logic over Solr for better ranking. <br />+ Worked on query autocomplete service (using LinkedIn's OSS Cleo).<br />+ Worked on improving search relevance and recall. </span><span class="clear"> </span>
-							</div>
-						
-							<div class="item">
-								<h3><span class="company l">Robotics and Machine Intelligence Lab (DTU)</span>
-						<span class="date r">November 2011 &mdash; May 2014</span>
-							</h3>
-							<span class="clear"> </span>
-							<span class="job_title">Member</span><span class="info">Worked on various projects in Computer Vision and Machine Intelligence:<br />+ MAJOR PROJECT 2: Modelling the motions and gestures of a human hand precisely using RGB-D sensor<br />+ MAJOR PROJECT: Parsing Natural Scenes using Deep Learning Approach<br />+ Interactive 3D display - Converted 2D display to 3D display by tracking head movements. <br />+ Kinect based Autonomous Quadcopter<br />+ Came 7th (out of over 200 teams nationwide) in Freescale Cup 2012 (IISC Bangalore)<br />+ Skin Color Detector  + Face Tracker  + Hand Tracker<br />+ Biometric Authentication Using Infrared Imaging of Hand Vein Patterns<br />+ Color Based Stereo Correspondence algorithm with Adaptive Local Support<br />+ Software to allow users to use hand gestures to perform mouse clicks.</span><span class="clear"> </span>
-							</div>
-						
-							<div class="item">
-								<h3><span class="company l">Hitech Robotic Systemz Ltd.</span>
-						<span class="date r">June 2013 &mdash; July 2013</span>
-							</h3>
-							<span class="clear"> </span>
-							<span class="job_title">Internship</span><span class="info"><ul><li>Developed protocol for communication between Robots and PC. </li><li>Developed GUI to remotely control the robots. </li></ul></span><span class="clear"> </span>
-							</div>
-						</div>
 			<div class="clear"> </div>
 		</div>
 			<div class="section section-education">
@@ -342,24 +383,24 @@
 							<h3><span class="course l">B.Tech in Computer Science and Engineering</span>
 						<span class="date r">August 2010 &mdash; June 2014</span>
 							</h3>
-							<span class="clear"> </span>
-							<span class="school">Delhi Technological University</span><span class="info"><strong>CPI: 68.05 %</strong></span><span class="clear"> </span>
+							<div class="clear"> </div>
+							<span class="school">Delhi Technological University</span><div class="info"><b>CPI: 68.05 %</b></div><span class="clear"> </span>
 						</div>
 						
 						<div class="item">
 							<h3><span class="course l">Intermediate (CBSE board)</span>
 						<span class="date r">July 2008 &mdash; June 2010</span>
 							</h3>
-							<span class="clear"> </span>
-							<span class="school">Somerville School</span><span class="info"><strong>Percentage: 83 %</strong></span><span class="clear"> </span>
+							<div class="clear"> </div>
+							<span class="school">Somerville School</span><div class="info"><b>Percentage: 83 %</b></div><span class="clear"> </span>
 						</div>
 						
 						<div class="item">
 							<h3><span class="course l">High School (ICSE board)</span>
 						<span class="date r">July 2006 &mdash; June 2008</span>
 							</h3>
-							<span class="clear"> </span>
-							<span class="school">Jyoti Niketan School</span><span class="info"><strong>Percentage: 92 %</strong></span><span class="clear"> </span>
+							<div class="clear"> </div>
+							<span class="school">Jyoti Niketan School</span><div class="info"><b>Percentage: 92 %</b></div><span class="clear"> </span>
 						</div>
 						</div>
 			<div class="clear"> </div>
@@ -367,19 +408,19 @@
 			<div class="section section-1375593480905">
 			<h2 class="title">Undergrad Research</h2>
 			<div class="set">
-						<div class="item">
-							<span class="info"><strong><u>STEREO VISION (RESEARCH PAPER)</u></strong><br />Co-authored a <strong>Research paper</strong> titled "<strong>Color Based Stereo Correspondence algorithm with Adaptive Local Support</strong>" which was selected for presentation in <strong>The 2013 International Conference on Image Processing, Computer Vision, and Pattern Recognition </strong>(<strong>IPCV'13</strong>), <strong>Las Vegas, USA</strong>. and <strong>The 2013 IEEE Symposium Series on </strong><strong>Computational Intelligence (IEEE SSCI'13), Singapore</strong> and for publication in corresponding conference proceedings. </span>
+							<div class="item">
+								<span class="info"><div><b><span style="text-decoration:underline;">STEREO VISION (RESEARCH PAPER)</span></b></div><div>Co-authored a <b>Research paper</b> titled "<b>Color Based Stereo Correspondence algorithm with Adaptive Local Support</b>" which was selected for presentation in <b>The 2013 International Conference on Image Processing, Computer Vision, and Pattern Recognition </b>(<b>IPCV'13</b>), <b>Las Vegas, USA</b>. and <b>The 2013 <span>IEEE Symposium Series on </span></b><span><b>Computational Intelligence (IEEE SSCI'13), Singapore</b> and for publication in corresponding conference proceedings. </span></div></span>
+							</div>
 						</div>
-					</div>
 			<div class="clear"> </div>
 		</div>
 			<div class="section section-references">
 			<h2 class="title">References</h2>
 			<div class="set">
-						<div class="item">
-							<span class="info"><strong>Sumit Taank</strong>, Co-Founder and former CEO, Right Relevance Inc. <br />(currently Engineering Manager at Facebook)<br />Email: staank@gmail.com<br /><br /><strong>Mr. Rajesh Rohilla</strong>, Associate Professor, Delhi Technological University<br />Email: rajesh@dce.ac.in</span>
+							<div class="item">
+								<span class="info"><div><b>Sumit Taank</b>, Co-Founder and former CEO, Right Relevance Inc. </div><div>(currently Engineering Manager at Facebook)</div><div>Email: staank@gmail.com</div><div><br /></div><b>Mr. Rajesh Rohilla</b>, Associate Professor, Delhi Technological University<br />Email: rajesh@dce.ac.in</span>
+							</div>
 						</div>
-					</div>
 			<div class="clear"> </div>
 		</div>
 		
