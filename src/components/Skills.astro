@@ -1,0 +1,79 @@
+---
+import 'animate.css';
+import Icon from './Icon.astro';
+---
+
+<section class="box skills animate__animated animate__fadeInUp">
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="trophy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Solution Architect</h2>
+		<p>Expert in designing robust and scalable solutions to meet business needs.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="cloud" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Cloud Expert</h2>
+		<p>Transforming businesses with modern Software Development, DevOps, and Cloud Architecture.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="strategy" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>AI Strategist</h2>
+		<p>Leveraging AI and ML to deliver scalable solutions for growth and efficiency.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="rocket-launch" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Entrepreneur</h2>
+		<p>Co-founder of Veda Labs, blending tech expertise and business acumen to drive success.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="brush" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Product Developer</h2>
+		<p>Leading user-centric design and scalable architecture from concept to market-ready products.</p>
+	</div>
+	<div class="stack gap-2 lg:gap-4">
+		<Icon icon="gear-fine" color="var(--accent-regular)" size="2.5rem" gradient />
+		<h2>Infra Manager</h2>
+		<p>Experienced in overseeing and optimizing tech infrastructure for maximum efficiency.</p>
+	</div>
+</section>
+
+<style>
+	.box {
+		border: 1px solid var(--gray-800);
+		border-radius: 0.75rem;
+		padding: 1.5rem;
+		background-color: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.skills {
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;
+		transition: transform (--theme-transition);
+	}
+
+	.skills h2 {
+		font-size: var(--text-lg);
+	}
+
+	.skills p {
+		color: var(--gray-400);
+	}
+
+	@media (min-width: 60em) {
+		.box {
+			border-radius: 1.5rem;
+			padding: 2.5rem;
+		}
+
+		.skills {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 5rem;
+		}
+
+		.skills h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

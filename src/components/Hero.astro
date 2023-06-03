@@ -1,0 +1,71 @@
+---
+import 'animate.css';
+
+interface Props {
+	title: string;
+	herotext?: string;
+	tagline?: string;
+	align?: 'start' | 'center';
+}
+
+const { align = 'center', tagline, herotext, title } = Astro.props;
+---
+
+<header class:list={['hero stack gap-4 animate__animated animate__fadeInUp animate__noscroll', align]}>
+	<div class="stack gap-2">
+		<h1 class="title">{title}</h1>
+		{herotext && <h1 class="title herotext">{herotext}</h1>}
+		{tagline && <p class="tagline">{tagline}</p>}
+	</div>
+	<slot />
+</header>
+
+<style>
+	.hero {
+		font-size: var(--text-lg);
+		text-align: center;
+		transition: transform (--theme-transition);
+	}
+
+	.title,
+	.tagline {
+		max-width: 37ch;
+		margin-inline: auto;
+	}
+
+	.title {
+		font-size: var(--text-3xl);
+		color: var(--gray-0);
+	}
+
+	.herotext {
+		font-size: var(--text-3xl);
+		background-image: var(--gradient-accent-orange);
+		-webkit-background-clip: text; /* For webkit-based browsers */
+		-webkit-text-fill-color: transparent; /* For webkit-based browsers */
+		background-clip: text;
+		text-fill-color: transparent;
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			font-size: var(--text-xl);
+		}
+
+		.start {
+			text-align: start;
+		}
+
+		.start .title,
+		.start .tagline {
+			margin-inline: unset;
+		}
+
+		.title {
+			font-size: var(--text-5xl);
+		}
+		.herotext {
+			font-size: var(--text-5xl);
+		}
+	}
+</style>

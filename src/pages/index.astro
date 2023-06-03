@@ -1,0 +1,371 @@
+---
+import "animate.css";
+import { getCollection } from "astro:content";
+
+// Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+// Component Imports
+import CallToAction from "../components/CallToAction.astro";
+import Grid from "../components/Grid.astro";
+import Hero from "../components/Hero.astro";
+import Icon from "../components/Icon.astro";
+import Pill from "../components/Pill.astro";
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+
+// Page section components
+import ContactCTA from "../components/ContactCTA.astro";
+import Skills from "../components/Skills.astro";
+
+// Content Fetching: List four most recent work projects
+const projects = (await getCollection("work"))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.filter(
+		(project) => !project.data.status || project.data.status === "published"
+	)
+	.slice(0, 4);
+
+// Mentions
+const mentions = [
+	{
+		brand: "Forbes",
+		url: "https://www.forbesindia.com/article/healthcare-special/retail-startup-turns-covid19-kit-maker-for-safer-public-spaces/62285/1",
+		title: "Retail startup turns 'Covid-19 kit' maker for safer public spaces",
+	},
+	{
+		brand: "YourStory",
+		url: "https://yourstory.com/2019/10/tech30-vedalabs-retail-analytics-ai-technology",
+		title: "Tech30: Meet the serial entrepreneurs who are using AI to help retailers grow their business",
+	},
+	{
+		brand: "YourStory",
+		url: "https://yourstory.com/2021/04/video-analytics-startup-veda-labs-google-analytics-offline-retailers",
+		title: "This video analytics startup aims to be the Google Analytics for offline retailers",
+	},
+	{
+		brand: "YourStory",
+		url: "https://yourstory.com/2019/08/funding-retail-ai-startup-vedalabs-satin-neo-dimensions",
+		title: "[Funding alert] Retail AI startup VedaLabs raises pre-Series A funding from Satin Neo Dimensions",
+	},
+	{
+		brand: "StartupTalky",
+		url: "https://startuptalky.com/veda-labs/",
+		title: "Veda Labs- Helping retailers get more and real-time customer insights",
+	},
+	{
+		brand: "The Logical Indian",
+		url: "https://thelogicalindian.com/education/procter-gamble-40804",
+		title: "Veda Labs: Finding Artificial Intelligence Based Digital Solutions For Businesses",
+	},
+	{
+		brand: "The Indian Wire",
+		url: "https://www.theindianwire.com/startups/retail-solutions-provider-startup-vedalabs-bags-undisclosed-amount-pre-series-round-satin-neo-dimension-165563/",
+		title: "Retail solutions provider startup VedaLabs bags undisclosed amount in pre-series round from Satin Neo Dimension",
+	},
+	{
+		brand: "siliconindia",
+		url: "https://technology.siliconindia.com/vendor/veda-labs-ai-tools-to-truly-understand-customers-cid-9420.html",
+		title: "Veda Labs: AI Tools to Truly Understand Customers",
+	},
+	{
+		brand: "Times of India",
+		url: "https://timesofindia.indiatimes.com/city/delhi/eight-delhi-technological-university-students-land-rs-70-lackage-packages/articleshow/22218380.cms",
+		title: "Eight Delhi Technological University students land Rs 70 lakh packages",
+	},
+];
+// Full Astro Component Syntax:
+// https://docs.astro.build/core-concepts/astro-components/
+---
+
+<BaseLayout>
+	<div class="stack gap-20 lg:gap-48">
+		<div class="wrapper stack gap-8 lg:gap-20">
+			<header class="hero">
+				<Hero
+					title="Hello, I'm"
+					herotext="Ashutosh Mishra"
+					tagline="Seasoned Technology Strategist and Independent Consultant based in New Delhi, India."
+					align="start"
+				>
+					<div class="roles">
+						<Pill>
+							<Icon icon="code" size="1.33em" /> Developer
+						</Pill>
+						<Pill>
+							<Icon icon="cloud" size="1.33em" /> Architect
+						</Pill>
+						<Pill>
+							<Icon icon="rocket-launch" size="1.33em" /> Consultant
+						</Pill>
+					</div>
+				</Hero>
+
+				<img
+					alt="Ashutosh Mishra"
+					width="480"
+					height="620"
+					class="animate__animated animate__fadeInRight"
+					src="/assets/portrait.png"
+				/>
+			</header>
+
+			<Skills />
+		</div>
+
+		<main class="wrapper stack gap-20 lg:gap-48">
+			<section class="section with-background with-cta">
+				<header
+					class="section-header stack gap-2 lg:gap-4 animate__animated animate__fadeInUp"
+				>
+					<h3>Selected Work</h3>
+					<p>
+						Over the years, I've had the opportunity to work on
+						projects across diverse sectors, turning ideas into
+						reality and delivering innovative solutions to complex
+						problems.
+					</p>
+					<p>Here are some of my major projects:</p>
+				</header>
+
+				<div class="gallery animate__animated animate__fadeInUp">
+					<Grid variant="offset">
+						{
+							projects.map((project) => (
+								<li>
+									<PortfolioPreview project={project} />
+								</li>
+							))
+						}
+					</Grid>
+				</div>
+
+				<div class="cta animate__animated animate__fadeInUp">
+					<CallToAction href="/work/">
+						View All
+						<Icon icon="arrow-right" size="1.2em" />
+					</CallToAction>
+				</div>
+			</section>
+
+			<section class="section with-background bg-variant">
+				<header
+					class="section-header stack gap-2 lg:gap-4 animate__animated animate__fadeInUp"
+				>
+					<h3>Mentions</h3>
+					<p>
+						I have been fortunate enough to recieve praise for my
+						work in several publications. Take a look below to learn
+						more.
+					</p>
+				</header>
+
+				<div class="gallery animate__animated animate__fadeInUp">
+					<Grid variant="small">
+						{
+							mentions.map((mention) => (
+								<a
+									href={mention.url}
+									class="mention-card"
+									target="_blank"
+								>
+									<div class="mention-title animate__animated animate__fadeInDown">
+										{mention.title}
+									</div>
+									<p class="animate__animated animate__delay-2s">
+										{mention.brand}
+									</p>
+								</a>
+							))
+						}
+					</Grid>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.hero {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+	}
+
+	.animate__animated {
+		transition: transform (--theme-transition);
+	}
+
+	.roles {
+		display: none;
+	}
+
+	.hero img {
+		aspect-ratio: 5 / 4;
+		object-fit: cover;
+		overflow: visible;
+		object-position: top;
+		transition: transform (--theme-transition);
+	}
+
+	@media (min-width: 50em) {
+		.hero {
+			display: grid;
+			grid-template-columns: 6fr 4fr;
+			padding-inline: 2.5rem;
+			gap: 3.75rem;
+		}
+
+		.roles {
+			margin-top: 0.5rem;
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.hero img {
+			aspect-ratio: 3 / 4;
+			object-fit: cover;
+			overflow: visible;
+		}
+	}
+
+	/* ====================================================== */
+
+	.section {
+		display: grid;
+		gap: 2rem;
+	}
+
+	.with-background {
+		position: relative;
+	}
+
+	.with-background::before {
+		--hero-bg: var(--bg-image-subtle-2);
+
+		content: "";
+		position: absolute;
+		pointer-events: none;
+		left: 50%;
+		width: 100vw;
+		aspect-ratio: calc(2.25 / var(--bg-scale));
+		top: 0;
+		transform: translateY(-75%) translateX(-50%);
+		background: url("/assets/backgrounds/noise.png") top center/220px repeat,
+			var(--hero-bg) center center / var(--bg-gradient-size) no-repeat,
+			var(--gray-999);
+		background-blend-mode: overlay, normal, normal, normal;
+		mix-blend-mode: var(--bg-blend-mode);
+		z-index: -1;
+	}
+
+	.with-background.bg-variant::before {
+		--hero-bg: var(--bg-image-subtle-1);
+	}
+
+	.section-header {
+		justify-self: center;
+		text-align: center;
+		max-width: 50ch;
+		font-size: var(--text-md);
+		color: var(--gray-300);
+	}
+
+	.section-header h3 {
+		font-size: var(--text-2xl);
+	}
+
+	@media (min-width: 50em) {
+		.section {
+			grid-template-columns: repeat(4, 1fr);
+			grid-template-areas: "header header header header" "gallery gallery gallery gallery";
+			gap: 5rem;
+		}
+
+		.section.with-cta {
+			grid-template-areas: "header header header cta" "gallery gallery gallery gallery";
+		}
+
+		.section-header {
+			grid-area: header;
+			font-size: var(--text-lg);
+		}
+
+		.section-header h3 {
+			font-size: var(--text-4xl);
+		}
+
+		.with-cta .section-header {
+			justify-self: flex-start;
+			text-align: left;
+		}
+
+		.gallery {
+			grid-area: gallery;
+		}
+
+		.cta {
+			grid-area: cta;
+		}
+	}
+
+	/* ====================================================== */
+
+	.mention-card {
+		display: flex;
+		flex-direction: column;
+		height: 7rem;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid var(--gray-800);
+		border-radius: 1.5rem;
+		color: var(--gray-300);
+		background: var(--gradient-subtle);
+		box-shadow: var(--shadow-sm);
+		padding: 1rem;
+		text-decoration: none;
+		overflow: hidden;
+		transition-duration: var(--theme-transition);
+		transition: transform var(--theme-transition);
+	}
+
+	.mention-card p {
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		transition: transform var(--theme-transition);
+	}
+
+	.mention-title {
+		display: none;
+		font-size: 0.8rem;
+		margin-bottom: 1.2rem;
+		overflow: hidden;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+
+	@media (hover: hover) {
+		.mention-card:hover .mention-title {
+			display: -webkit-box;
+		}
+
+		.mention-card:hover p {
+			transform: translateY(0.5rem) var(--theme-transition);
+		}
+	}
+
+	@media (max-width: 50em) {
+		.mention-card {
+			border-radius: 1.5rem;
+			height: 9.5rem;
+		}
+
+		.mention-title {
+			display: -webkit-box;
+		}
+	}
+</style>

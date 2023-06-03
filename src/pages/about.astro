@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Ashutosh Mishra" description="About Ashutosh Mishra">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Driving Technology, Delivering Excellence"
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Ashutosh Mishra at work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Currently an independent consultant, my journey in the tech world spans from software development and infrastructure management to project and client management. With over nine years of experience, my expertise lies in crafting scalable web architectures, leading tech teams, and driving automation efforts.
+					</p>
+					<br>
+					<p>
+						Throughout my career, I've developed and executed successful technology roadmaps for startups and established businesses alike. My experience includes spearheading the software design for Euler Motors' first ADAS and Self Driving EV and acting as the technology advisor for BachatBaazi, where I led the redesign and development of all backend services from scratch.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>Computer Engineering</p>
+					<p><b>Delhi Technological University</b></p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<table>
+                        <tr>
+                            <td valign="top"><b>Technical</b></td>
+                            <td>AI/ML, DevOps, Kubernetes (AWS EKS, Azure AKS), Python Flask, PostgreSQL, Kafka, MongoDB, Docker, Redis, Cloud Technologies</td>
+                        </tr>
+                        <tr>
+                            <td valign="top"><b>Programming</b></td>
+                            <td>Python, Java, Javascript, C, C++, MATLAB</td>
+                        </tr>
+                        <tr>
+                            <td valign="top"><b>Management</b></td>
+                            <td>Infrastructure, Solution Architecture, Project Management, Client Management, Automation, Product Management</td>
+                        </tr>
+                        <tr>
+                            <td valign="top"><b>Soft Skills</b></td>
+                            <td>Creative Problem Solving, Interpersonal Communication, Stakeholder Management, Sales, Presentation and Documentation Skills</td>
+                        </tr>
+                    </table>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+    td {
+        padding: 0.5rem 2rem 0 0;
+        valign: top;
+    }
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>

@@ -1,0 +1,39 @@
+---
+interface Props {
+	type?: "normal" | "warning" | "error" | "success";
+}
+
+const { type = "normal" } = Astro.props;
+---
+
+<div class="pill" data-type={type}><slot /></div>
+
+<style>
+	.pill {
+		display: flex;
+		padding: 0.5rem 1rem;
+		gap: 0.5rem;
+		color: var(--accent-text-over);
+		border: 1px solid var(--accent-regular);
+		background-color: var(--accent-regular);
+		border-radius: 999rem;
+		font-size: var(--text-md);
+		line-height: 1.35;
+		white-space: nowrap;
+	}
+
+	.pill[data-type="warning"] {
+		border: 1px solid var(--warn-color);
+		background-color: var(--warn-color);
+	}
+
+	.pill[data-type="error"] {
+		border: 1px solid var(--error-color);
+		background-color: var(--error-color);
+	}
+
+	.pill[data-type="success"] {
+		border: 1px solid var(--success-color);
+		background-color: var(--success-color);
+	}
+</style>
