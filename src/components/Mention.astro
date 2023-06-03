@@ -14,7 +14,7 @@ const { mention } = Astro.props;
 
 <a href={mention.url} class="mention-card" target="_blank">
     <div class="mention-container">
-        <div class="mention-title animate__animated animate__fadeInDown">
+        <div class="mention-title">
             <span>{mention.title}</span>
         </div>
         <p class="brand animate__animated animate__fadeInUp">
@@ -56,6 +56,7 @@ const { mention } = Astro.props;
         overflow: hidden;
         text-overflow: ellipsis;
         transition: transform var(--theme-transition);
+        /* transition: transform 0.01s; very short transition duration */
     }
 
     .mention-title {
@@ -67,11 +68,13 @@ const { mention } = Astro.props;
             opacity var(--theme-transition);
         position: relative;
         visibility: hidden;
+        transform: translateY(-300%);
+        overflow: hidden;
     }
 
     .mention-title span {
         display: inline-block;
-        max-height: 3em; /* adjust to control the maximum lines for title */
+        max-height: 3em; /* updated to take up about 3 lines of text */
         overflow: hidden;
     }
 
@@ -99,6 +102,10 @@ const { mention } = Astro.props;
             max-height: 3em;
             opacity: 1;
             visibility: visible;
+            transform: translateY(0%);
+            transition: max-height var(--theme-transition),
+                opacity var(--theme-transition),
+                transform var(--theme-transition);
         }
 
         .mention-card:hover .brand {
@@ -109,13 +116,14 @@ const { mention } = Astro.props;
     @media (max-width: 50em) {
         .mention-card {
             border-radius: 1.5rem;
-            height: 8rem;
+            height: 8rem; /* updated to your preference */
         }
 
         .mention-title {
             max-height: 3em;
             opacity: 1;
             visibility: visible;
+            transform: translateY(0%);
         }
 
         .mention-container {
