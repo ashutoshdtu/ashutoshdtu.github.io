@@ -1,0 +1,125 @@
+---
+import "animate.css";
+
+interface Props {
+    mention: {
+        title: string;
+        brand: string;
+        url: string;
+    };
+}
+
+const { mention } = Astro.props;
+---
+
+<a href={mention.url} class="mention-card" target="_blank">
+    <div class="mention-container">
+        <div class="mention-title animate__animated animate__fadeInDown">
+            <span>{mention.title}</span>
+        </div>
+        <p class="brand animate__animated animate__fadeInUp">
+            {mention.brand}
+        </p>
+    </div>
+</a>
+
+<style>
+    .mention-card {
+        display: flex;
+        flex-direction: column;
+        height: 7rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        border: 1px solid var(--gray-800);
+        border-radius: 1.5rem;
+        color: var(--gray-300);
+        background: var(--gradient-subtle);
+        box-shadow: var(--shadow-sm);
+        padding: 1rem;
+        text-decoration: none;
+        overflow: hidden;
+        transition-duration: var(--theme-transition);
+        transition: transform var(--theme-transition);
+    }
+
+    .mention-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        transition: justify-content var(--theme-transition);
+    }
+
+    .brand {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        transition: transform var(--theme-transition);
+    }
+
+    .mention-title {
+        font-size: 0.8rem;
+        max-height: 0;
+        opacity: 0;
+        margin-bottom: 1.2rem;
+        transition: max-height var(--theme-transition),
+            opacity var(--theme-transition);
+        position: relative;
+        visibility: hidden;
+    }
+
+    .mention-title span {
+        display: inline-block;
+        max-height: 3em; /* adjust to control the maximum lines for title */
+        overflow: hidden;
+    }
+
+    .mention-title::after {
+        content: "";
+        text-align: right;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 1.2em;
+        background: linear-gradient(
+            to right,
+            transparent,
+            var(--gradient-subtle)
+        );
+    }
+
+    @media (hover: hover) {
+        .mention-card:hover .mention-container {
+            justify-content: space-between;
+        }
+
+        .mention-card:hover .mention-title {
+            max-height: 3em;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mention-card:hover .brand {
+            transform: translateY(0.5rem);
+        }
+    }
+
+    @media (max-width: 50em) {
+        .mention-card {
+            border-radius: 1.5rem;
+            height: 8rem;
+        }
+
+        .mention-title {
+            max-height: 3em;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mention-container {
+            justify-content: space-between;
+        }
+    }
+</style>

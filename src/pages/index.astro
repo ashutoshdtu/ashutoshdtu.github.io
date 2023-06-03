@@ -10,6 +10,7 @@ import CallToAction from "../components/CallToAction.astro";
 import Grid from "../components/Grid.astro";
 import Hero from "../components/Hero.astro";
 import Icon from "../components/Icon.astro";
+import Mention from "../components/Mention.astro";
 import Pill from "../components/Pill.astro";
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 
@@ -163,18 +164,7 @@ const mentions = [
 					<Grid variant="small">
 						{
 							mentions.map((mention) => (
-								<a
-									href={mention.url}
-									class="mention-card"
-									target="_blank"
-								>
-									<div class="mention-title animate__animated animate__fadeInDown">
-										{mention.title}
-									</div>
-									<p class="animate__animated animate__delay-2s">
-										{mention.brand}
-									</p>
-								</a>
+								<Mention mention={mention} />
 							))
 						}
 					</Grid>
@@ -312,60 +302,4 @@ const mentions = [
 	}
 
 	/* ====================================================== */
-
-	.mention-card {
-		display: flex;
-		flex-direction: column;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-		padding: 1rem;
-		text-decoration: none;
-		overflow: hidden;
-		transition-duration: var(--theme-transition);
-		transition: transform var(--theme-transition);
-	}
-
-	.mention-card p {
-		white-space: nowrap;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		transition: transform var(--theme-transition);
-	}
-
-	.mention-title {
-		display: none;
-		font-size: 0.8rem;
-		margin-bottom: 1.2rem;
-		overflow: hidden;
-		-webkit-line-clamp: 3;
-		-webkit-box-orient: vertical;
-	}
-
-	@media (hover: hover) {
-		.mention-card:hover .mention-title {
-			display: -webkit-box;
-		}
-
-		.mention-card:hover p {
-			transform: translateY(0.5rem) var(--theme-transition);
-		}
-	}
-
-	@media (max-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
-		}
-
-		.mention-title {
-			display: -webkit-box;
-		}
-	}
 </style>
