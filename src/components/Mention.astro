@@ -47,7 +47,9 @@ const { mention } = Astro.props;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         height: 100%;
+        position: relative;
         transition: justify-content var(--theme-transition);
     }
 
@@ -55,8 +57,9 @@ const { mention } = Astro.props;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        transition: transform var(--theme-transition);
-        /* transition: transform 0.01s; very short transition duration */
+        transition: transform var(--theme-transition),
+            opacity var(--theme-transition);
+        z-index: 1;
     }
 
     .mention-title {
@@ -65,37 +68,22 @@ const { mention } = Astro.props;
         opacity: 0;
         margin-bottom: 1.2rem;
         transition: max-height var(--theme-transition),
-            opacity var(--theme-transition);
-        position: relative;
+            opacity var(--theme-transition), transform var(--theme-transition);
         visibility: hidden;
-        transform: translateY(-300%);
         overflow: hidden;
+        z-index: 2;
+        transform: translateY(-300%);
     }
 
     .mention-title span {
         display: inline-block;
-        max-height: 3em; /* updated to take up about 3 lines of text */
+        max-height: 3em;
         overflow: hidden;
-    }
-
-    .mention-title::after {
-        content: "";
-        text-align: right;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 50%;
-        height: 1.2em;
-        background: linear-gradient(
-            to right,
-            transparent,
-            var(--gradient-subtle)
-        );
     }
 
     @media (hover: hover) {
         .mention-card:hover .mention-container {
-            justify-content: space-between;
+            justify-content: flex-start;
         }
 
         .mention-card:hover .mention-title {
@@ -109,14 +97,14 @@ const { mention } = Astro.props;
         }
 
         .mention-card:hover .brand {
-            transform: translateY(0.5rem);
+            transform: translateY(-0.5rem); /* Moves the brand downwards */
         }
     }
 
     @media (max-width: 50em) {
         .mention-card {
             border-radius: 1.5rem;
-            height: 8rem; /* updated to your preference */
+            height: 8rem;
         }
 
         .mention-title {
