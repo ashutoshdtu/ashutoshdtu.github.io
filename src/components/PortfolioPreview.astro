@@ -25,7 +25,7 @@ const randomBgImage =
 	{
 		data.img && (
 			<img
-				class="floating-img animate__animated animate__fadeInRight"
+				class="floating-img animate__animated animate__fadeInRight drop-shadow-xxl"
 				src={data.img}
 				alt={data.img_alt || ""}
 				loading="lazy"
@@ -108,6 +108,22 @@ const randomBgImage =
 		max-width: 90%; /* Modify as per requirements */
 		object-fit: cover;
 		z-index: 1;
+		overflow: hidden;
+		transition: max-width var(--theme-transition),
+			filter var(--theme-transition);
+	}
+
+	.card:hover
+		.floating-img.drop-shadow-xl
+		.floating-img.drop-shadow-xxl
+		.floating-img.drop-shadow-xxxl {
+		filter: none;
+	}
+
+	.card:hover .floating-img {
+		max-width: 100%; /* Modify as per requirements */
+		transition: max-width var(--theme-transition),
+			filter var(--theme-transition);
 	}
 
 	img {
