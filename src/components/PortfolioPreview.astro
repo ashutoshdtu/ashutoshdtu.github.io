@@ -1,22 +1,38 @@
 ---
-import 'animate.css';
-import type { CollectionEntry } from 'astro:content';
+import "animate.css";
+import type { CollectionEntry } from "astro:content";
 interface Props {
-	project: CollectionEntry<'work'>;
+	project: CollectionEntry<"work">;
 }
 
 const { data, slug } = Astro.props.project;
 
 // Your array of background images
 const bgImages = ["stock-1.jpg", "stock-2.jpg", "stock-3.jpg", "stock-4.jpg"];
-const randomBgImage = "/assets/card-backgrounds/" + bgImages[Math.floor(Math.random() * bgImages.length)];
-
+const randomBgImage =
+	"/assets/card-backgrounds/" +
+	bgImages[Math.floor(Math.random() * bgImages.length)];
 ---
 
-<a class="card" style={`background-image: url(${randomBgImage})`} href={`/work/${slug}`}>
-	<span class="title animate__animated animate__fadeInDown">{data.title}</span>
+<a
+	class="card"
+	style={`background-image: url(${randomBgImage})`}
+	href={`/work/${slug}`}
+>
+	<span class="title animate__animated animate__fadeInDown">{data.title}</span
+	>
 	<span class="description">{data.description}</span>
-    {data.img && <img class="floating-img animate__animated animate__fadeInRight" src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />}
+	{
+		data.img && (
+			<img
+				class="floating-img animate__animated animate__fadeInRight"
+				src={data.img}
+				alt={data.img_alt || ""}
+				loading="lazy"
+				decoding="async"
+			/>
+		)
+	}
 </a>
 
 <style>
@@ -64,13 +80,17 @@ const randomBgImage = "/assets/card-backgrounds/" + bgImages[Math.floor(Math.ran
 		left: 0;
 		width: 100%;
 		padding: 0.5rem 1rem;
-		background: hsla(var(--gray-999-basis), 0.8); /* Add some transparency to the background */
+		background: hsla(
+			var(--gray-999-basis),
+			0.8
+		); /* Add some transparency to the background */
 		color: var(--gray-200);
 		font-size: var(--text-md);
 		opacity: 0; /* Initially hidden */
 		transition: opacity var(--theme-transition);
 		transform: translateY(100%); /* Initially push it down */
-		transition: transform var(--theme-transition), opacity var(--theme-transition);
+		transition: transform var(--theme-transition),
+			opacity var(--theme-transition);
 		z-index: 2;
 	}
 
@@ -81,8 +101,8 @@ const randomBgImage = "/assets/card-backgrounds/" + bgImages[Math.floor(Math.ran
 
 	.floating-img {
 		position: absolute;
-		top: 4rem;  /* Set top padding */
-		right: 0rem;   /* Set min left padding */
+		top: 4rem; /* Set top padding */
+		right: 0rem; /* Set min right padding */
 		width: auto;
 		height: auto;
 		max-width: 90%; /* Modify as per requirements */

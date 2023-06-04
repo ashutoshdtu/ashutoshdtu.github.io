@@ -12,7 +12,11 @@ interface Props {
 const { mention } = Astro.props;
 ---
 
-<a href={mention.url} class="mention-card" target="_blank">
+<a
+    href={mention.url}
+    class="mention-card animate__animated animate__fadeInUp"
+    target="_blank"
+>
     <div class="mention-container">
         <div class="mention-title">
             <span>{mention.title}</span>
