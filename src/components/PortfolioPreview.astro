@@ -43,7 +43,8 @@ const randomBgImage =
 		position: relative; /* Add relative positioning */
 		display: grid;
 		grid-template: auto 1fr / auto 1fr;
-		height: 17rem;
+		height: auto; /* We set this to auto so it adjusts according to the width */
+		aspect-ratio: 1.63 / 1; /* This defines the aspect ratio, width to height */
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
 		border-radius: 0.75rem;
@@ -100,7 +101,11 @@ const randomBgImage =
 	.floating-img {
 		position: absolute;
 		top: 4rem; /* Set top padding */
-		right: 0rem; /* Set min right padding */
+		/* right: 0rem; */
+		left: 0;
+		right: 0;
+		margin-left: auto;
+		margin-right: auto;
 		width: auto;
 		height: auto;
 		max-width: 90%; /* Modify as per requirements */
