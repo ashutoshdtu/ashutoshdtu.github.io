@@ -8,7 +8,7 @@ interface Props {
 const { data, slug } = Astro.props.project;
 
 // Your array of background images
-const bgImages = ["stock-1.jpg", "stock-2.jpg", "stock-3.jpg", "stock-4.jpg"];
+const bgImages = ["stock-2.jpg", "stock-3.jpg", "stock-4.jpg"];
 const randomBgImage =
 	"/assets/card-backgrounds/" +
 	bgImages[Math.floor(Math.random() * bgImages.length)];
@@ -19,13 +19,16 @@ const randomBgImage =
 	style={`background-image: url(${randomBgImage})`}
 	href={`/work/${slug}`}
 >
+	<!-- <a class="card" href={`/work/${slug}`}> -->
 	<span class="title animate__animated animate__fadeInDown">{data.title}</span
 	>
-	<span class="description">{data.description}</span>
+	<span class="description">{data.description} - {data.boxShadow}</span>
 	{
 		data.img && (
 			<img
-				class="floating-img animate__animated animate__fadeInRight drop-shadow-xxl"
+				class={`floating-img animate__animated animate__fadeInRight ${
+					data.boxShadow !== false ? "with-shadow" : ""
+				}`}
 				src={data.img}
 				alt={data.img_alt || ""}
 				loading="lazy"
@@ -94,11 +97,6 @@ const randomBgImage =
 		z-index: 2;
 	}
 
-	.card:hover .description {
-		opacity: 1; /* Shown on hover */
-		transform: translateY(0); /* Slide up on hover */
-	}
-
 	.floating-img {
 		position: absolute;
 		top: 4rem; /* Set top padding */
@@ -109,21 +107,12 @@ const randomBgImage =
 		object-fit: cover;
 		z-index: 1;
 		overflow: hidden;
-		transition: max-width var(--theme-transition),
-			filter var(--theme-transition);
+		/* transition: max-width var(--theme-transition); */
 	}
 
-	.card:hover
-		.floating-img.drop-shadow-xl
-		.floating-img.drop-shadow-xxl
-		.floating-img.drop-shadow-xxxl {
-		filter: none;
-	}
-
-	.card:hover .floating-img {
-		max-width: 100%; /* Modify as per requirements */
-		transition: max-width var(--theme-transition),
-			filter var(--theme-transition);
+	.floating-img.with-shadow {
+		box-shadow: var(--shadow-xl);
+		transition: box-shadow var(--theme-transition);
 	}
 
 	img {
@@ -134,13 +123,28 @@ const randomBgImage =
 	}
 
 	@media (min-width: 50em) {
+		.title {
+			border-radius: 0.9375rem;
+		}
+
 		.card {
-			height: 22rem;
+			height: auto; /* We set this to auto so it adjusts according to the width */
+			aspect-ratio: 1.73 / 1; /* This defines the aspect ratio, width to height */
 			border-radius: 1.5rem;
 		}
 
-		.title {
-			border-radius: 0.9375rem;
+		.card:hover .description {
+			opacity: 1; /* Shown on hover */
+			transform: translateY(0); /* Slide up on hover */
+		}
+
+		.card:hover .floating-img {
+			/* max-width: 100%; */
+			/* transition: max-width var(--theme-transition); */
+		}
+
+		.card:hover .floating-img.with-shadow {
+			box-shadow: none;
 		}
 	}
 </style>

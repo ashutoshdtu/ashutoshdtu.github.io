@@ -6,7 +6,7 @@ img_alt: Digital representation of cloud infrastructure
 description: |
   Redesigned & rewrote BachatBaazi's (an auction app) entire cloud infrastructure, achieving 10x improvement in performance.
 tags:
-  - Backend Development
+  - Backend
   - Software Design
   - E-commerce
 ---

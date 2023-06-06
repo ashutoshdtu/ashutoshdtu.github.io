@@ -6,7 +6,7 @@ img_alt: A screen capture of the innovative Photoshoot Web-App
 description: |
   Led the development of an innovative web-app for Moksha Designs, automating real-time garment photoshoots without human models.
 tags:
-  - Web App Development
+  - Web App
   - Automation
   - Fashion Tech
 ---

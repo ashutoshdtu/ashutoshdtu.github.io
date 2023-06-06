@@ -32,43 +32,6 @@ const { title, description, image = "/assets/portrait.png" } = Astro.props;
 			addEventListener("load", () =>
 				document.documentElement.classList.add("loaded")
 			);
-			document.addEventListener("DOMContentLoaded", function () {
-				var observer = new IntersectionObserver(function (entries) {
-					entries.forEach(function (entry) {
-						if (entry.isIntersecting) {
-							var animationClasses =
-								entry.target.dataset.animation;
-							entry.target.classList.add(
-								...animationClasses.split(" ")
-							);
-							entry.target.style.visibility =
-								entry.target.dataset.visibility; // Restore the original visibility
-							observer.unobserve(entry.target);
-						}
-					});
-				});
-
-				document
-					.querySelectorAll(".animate__animated")
-					.forEach(function (element) {
-						if (element.classList.contains("animate__noscroll")) {
-							return; // Skip this element if it has the 'animate__noscroll' class
-						}
-
-						var animationClasses = Array.from(
-							element.classList
-						).filter(
-							(cls) =>
-								cls.startsWith("animate__") &&
-								cls !== "animate__animated"
-						);
-						element.dataset.animation = animationClasses.join(" ");
-						element.classList.remove(...animationClasses);
-						element.dataset.visibility = element.style.visibility; // Store the original visibility
-						element.style.visibility = "hidden"; // Make the element hidden
-						observer.observe(element);
-					});
-			});
 		</script>
 
 		<style>

@@ -3,6 +3,7 @@ title: ADAS and Self Driving EV - Euler Motors
 publishDate: 2023-06-01 00:00:00
 img: /assets/projects/euler-motors.png
 img_alt: A cutting-edge self driving EV on a dynamic background
+boxShadow: false
 description: |
   Set up a robust teleoperation system and self driving architecture for Euler Motors' self-driving EV.
 
@@ -10,7 +11,6 @@ tags:
   - Software Design
   - Self Driving EV
   - ADAS
-  - Device Architecture
 ---
 
 My tenure with Euler Motors involved an ambitious project – the inception of the first Advanced Driver-Assistance Systems (ADAS) and Self-Driving Electric Vehicle (EV). Despite having to leave midway due to health conditions, my contribution to the project was significant and marked by innovation and technical excellence.

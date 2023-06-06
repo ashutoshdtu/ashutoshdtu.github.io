@@ -8,7 +8,6 @@ description: |
 tags:
   - AI
   - Video Analytics
-  - Kubernetes
   - Startup
 ---
 
