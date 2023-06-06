@@ -100,8 +100,7 @@ const randomBgImage =
 
 	.floating-img {
 		position: absolute;
-		top: 4rem; /* Set top padding */
-		/* right: 0rem; */
+		top: 4rem;
 		left: 0;
 		right: 0;
 		margin-left: auto;
@@ -112,7 +111,6 @@ const randomBgImage =
 		object-fit: cover;
 		z-index: 1;
 		overflow: hidden;
-		/* transition: max-width var(--theme-transition); */
 	}
 
 	.floating-img.with-shadow {
@@ -127,13 +125,19 @@ const randomBgImage =
 		object-fit: cover;
 	}
 
+	@media (min-width: 30em) {
+		.card {
+			aspect-ratio: 1.76 / 1; /* This defines the aspect ratio, width to height */
+			border-radius: 1rem;
+		}
+	}
+
 	@media (min-width: 50em) {
 		.title {
 			border-radius: 0.9375rem;
 		}
 
 		.card {
-			height: auto; /* We set this to auto so it adjusts according to the width */
 			aspect-ratio: 1.73 / 1; /* This defines the aspect ratio, width to height */
 			border-radius: 1.5rem;
 		}
