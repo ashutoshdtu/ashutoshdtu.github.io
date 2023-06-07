@@ -21,8 +21,12 @@ import Hero from "../components/Hero.astro";
 			</Hero>
 
 			<section>
-				<h2 class="section-title">Background</h2>
-				<div class="content">
+				<h2
+					class="section-title animate__animated animate__slideInLeft"
+				>
+					Background
+				</h2>
+				<div class="content animate__animated animate__slideInUp">
 					<p>
 						Currently an independent consultant, my journey in the
 						tech world spans from software development and
@@ -41,24 +45,26 @@ import Hero from "../components/Hero.astro";
 						advisor for BachatBaazi, where I led the redesign and
 						development of all backend services from scratch.
 					</p>
-					<p>
-						<a
-							href="https://www.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_10798281.htm#query=software%20developer&position=1&from_view=search&track=robertav1_2_sidr"
-							>Image by upklyak</a
-						> on Freepik
-					</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Education</h2>
-				<div class="content">
+				<h2
+					class="section-title animate__animated animate__slideInLeft"
+				>
+					Education
+				</h2>
+				<div class="content animate__animated animate__slideInUp">
 					<p>Computer Engineering</p>
 					<p><b>Delhi Technological University</b></p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Skills</h2>
-				<div class="content">
+				<h2
+					class="section-title animate__animated animate__slideInLeft"
+				>
+					Skills
+				</h2>
+				<div class="content animate__animated animate__slideInUp">
 					<table>
 						<tr>
 							<td valign="top"><b>Technical</b></td>
@@ -89,6 +95,28 @@ import Hero from "../components/Hero.astro";
 							>
 						</tr>
 					</table>
+				</div>
+			</section>
+			<!-- <section>
+				<h2 class="section-title"></h2>
+				<div class="content animate__animated animate__slideInUp">
+					<p>
+						<a href="/assets/ashutosh-mishra-resume.pdf" download
+							>Download Resume</a
+						>
+					</p>
+				</div>
+			</section> -->
+			<section>
+				<h2 class="section-title"></h2>
+				<div class="content animate__animated animate__slideInUp">
+					<p>
+						Credits:
+						<a
+							href="https://www.freepik.com/free-vector/web-development-programmer-engineering-coding-website-augmented-reality-interface-screens-developer-project-engineer-programming-software-application-design-cartoon-illustration_10798281.htm#query=software%20developer&position=1&from_view=search&track=robertav1_2_sidr"
+							>Image by upklyak</a
+						> on Freepik
+					</p>
 				</div>
 			</section>
 		</main>
@@ -126,10 +154,12 @@ import Hero from "../components/Hero.astro";
 		grid-column-start: 1;
 		font-size: var(--text-xl);
 		color: var(--gray-0);
+		transition: transform var(--theme-transition);
 	}
 
 	.content {
 		grid-column: 2 / 4;
+		transition: transform var(--theme-transition);
 	}
 
 	.content :global(a) {
