@@ -1,5 +1,5 @@
 ---
-title: Photoshoot Web-App - Moksha
+title: Photoshoot App - Moksha
 publishDate: 2023-03-01 00:00:00
 img: /assets/projects/moksha.png
 img_alt: A screen capture of the innovative Photoshoot Web-App 
