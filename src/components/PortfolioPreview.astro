@@ -60,6 +60,26 @@ const randomBgImage =
 		background-size: cover;
 	}
 
+	.card::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: hsla(
+			var(--gray-999-basis),
+			0.15
+		); /* Adjust the last value (0.5) to change opacity level */
+		z-index: 1;
+	}
+
+	.title,
+	.description,
+	.floating-img {
+		z-index: 2; /* Make sure these elements are above the overlay */
+	}
+
 	.card:hover {
 		box-shadow: var(--shadow-md);
 	}
