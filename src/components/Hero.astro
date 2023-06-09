@@ -20,6 +20,7 @@ const { align = "center", tagline, herotext, title } = Astro.props;
 	<div class="stack gap-2">
 		<h1 class="title">{title}</h1>
 		{herotext && <h1 class="title herotext">{herotext}</h1>}
+		<br />
 		{tagline && <p class="tagline">{tagline}</p>}
 	</div>
 	<slot />
@@ -54,7 +55,7 @@ const { align = "center", tagline, herotext, title } = Astro.props;
 
 	@media (min-width: 50em) {
 		.hero {
-			font-size: var(--text-xl);
+			font-size: var(--text-lg);
 		}
 
 		.start {
@@ -67,10 +68,23 @@ const { align = "center", tagline, herotext, title } = Astro.props;
 		}
 
 		.title {
-			font-size: var(--text-5xl);
+			font-size: var(--text-3xl);
 		}
 		.herotext {
-			font-size: var(--text-5xl);
+			font-size: var(--text-3xl);
+		}
+	}
+
+	@media (min-width: 70em) {
+		.hero {
+			font-size: var(--text-xl);
+		}
+
+		.title {
+			font-size: var(--text-4xl);
+		}
+		.herotext {
+			font-size: var(--text-4xl);
 		}
 	}
 </style>
