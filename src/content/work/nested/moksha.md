@@ -1,13 +1,14 @@
 ---
 title: Photoshoot App - Moksha
-publishDate: 2023-03-01 00:00:00
+publishDate: 2023-05-01 00:00:00
 img: /assets/projects/moksha.png
-img_alt: A screen capture of the innovative Photoshoot Web-App 
+img_alt: A screen capture of the innovative Photoshoot Web-App
+imgBg: /assets/card-backgrounds/stock-3.jpg
 description: |
   Led the development of an innovative web-app for Moksha Productions, automating real-time garment photoshoots without human models.
 tags:
   - Web App
-  - Automation
+  - Computer Vision
   - Fashion Tech
 ---
 

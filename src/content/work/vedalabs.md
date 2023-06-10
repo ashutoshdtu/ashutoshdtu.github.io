@@ -1,8 +1,9 @@
 ---
 title: Veda Labs - Co-Founder
-publishDate: 2023-05-01 00:00:00
+publishDate: 2023-05-04 00:00:00
 img: /assets/projects/vedalabs.png
-img_alt: Veda Labs logo on a tech-inspired background
+img_alt: Veda Labs dashboard on a tech-inspired background
+imgBg: /assets/card-backgrounds/stock-4.jpg
 description: |
   Co-founded and led engineering at Veda Labs, an AI startup offering analytics over CCTV.
 tags:

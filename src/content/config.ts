@@ -9,6 +9,7 @@ export const collections = {
 			tags: z.array(z.string()),
 			img: z.string(),
 			img_alt: z.string().optional(),
+			imgBg: z.string().optional(),
 			boxShadow: z.boolean().default(true),
 			status: z.enum(['draft', 'published']).optional(),
 		}),

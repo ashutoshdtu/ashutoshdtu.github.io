@@ -1,8 +1,9 @@
 ---
 title: Self Driving EV - Euler Motors
-publishDate: 2023-06-01 00:00:00
+publishDate: 2023-05-03 00:00:00
 img: /assets/projects/euler-motors.png
 img_alt: A cutting-edge self driving EV on a dynamic background
+imgBg: /assets/card-backgrounds/stock-3.jpg
 boxShadow: false
 description: |
   Set up a robust teleoperation system and self driving architecture for Euler Motors' self-driving EV.

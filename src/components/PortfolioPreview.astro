@@ -9,20 +9,22 @@ const { data, slug } = Astro.props.project;
 
 // Your array of background images
 const bgImages = ["stock-2.jpg", "stock-3.jpg", "stock-4.jpg"];
-const randomBgImage =
-	"/assets/card-backgrounds/" +
-	bgImages[Math.floor(Math.random() * bgImages.length)];
+const cardBgImage = data.imgBg
+	? `${data.imgBg}`
+	: `/assets/card-backgrounds/${
+			bgImages[Math.floor(Math.random() * bgImages.length)]
+	  }`;
 ---
 
 <a
 	class="card"
-	style={`background-image: url(${randomBgImage})`}
+	style={`background-image: url(${cardBgImage})`}
 	href={`/work/${slug}`}
 >
 	<!-- <a class="card" href={`/work/${slug}`}> -->
 	<span class="title animate__animated animate__fadeInDown">{data.title}</span
 	>
-	<span class="description">{data.description} - {data.boxShadow}</span>
+	<span class="description">{data.description}</span>
 	{
 		data.img && (
 			<img

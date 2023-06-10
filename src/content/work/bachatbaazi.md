@@ -1,8 +1,9 @@
 ---
 title: BachatBaazi - Backend
-publishDate: 2023-04-01 00:00:00
+publishDate: 2023-05-02 00:00:00
 img: /assets/projects/bachatbaazi.png
-img_alt: Digital representation of cloud infrastructure
+img_alt: A screen capture of BachatBaazi app
+imgBg: /assets/card-backgrounds/stock-2.jpg
 description: |
   Redesigned & rewrote BachatBaazi's (an auction app) entire cloud infrastructure, achieving 10x improvement in performance.
 tags:

@@ -18,8 +18,11 @@ const { align = "center", tagline, herotext, title } = Astro.props;
 	]}
 >
 	<div class="stack gap-2">
-		<h1 class="title">{title}</h1>
-		{herotext && <h1 class="title herotext">{herotext}</h1>}
+		<h1 class="title">
+			<span class="with-newline">{title}</span>
+			{herotext && <span class="with-newline herotext">{herotext}</span>}
+		</h1>
+		<!-- {herotext && <h1 class="title herotext">{herotext}</h1>} -->
 		<br />
 		{tagline && <p class="tagline">{tagline}</p>}
 	</div>
@@ -42,6 +45,10 @@ const { align = "center", tagline, herotext, title } = Astro.props;
 	.title {
 		font-size: var(--text-3xl);
 		color: var(--gray-0);
+	}
+
+	.with-newline {
+		white-space: pre;
 	}
 
 	.herotext {
